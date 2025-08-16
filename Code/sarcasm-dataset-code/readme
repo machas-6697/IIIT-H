@@ -1,0 +1,85 @@
+1. We convert the three txt file datasets into their respective json files by using the 
+      Sarcasm_tweets.txt ----> tweets_txt_to_json.py ----> Sarcasm_tweets.json
+      Sarcasm_tweets_with_language.txt ----> tweets_with_lang_to_json.py ----> Sarcasm_tweets_with_language.json
+      Sarcasm_tweet_truth.txt ----> tweets_stance_to_json.py ----> Sarcasm_tweet_truth.json
+
+" PREVIEW OF Sarcasm_tweets.txt "
+
+866871160725794816
+Triple Talaq par Burbak Kuchh nahi bolega
+
+880356789358743553
+Batao ye uss site pr se akki sir ke verdict nikaal laaye jaha he ajay ki ek bi movie hit nai
+
+877751493889105920
+Hindu baheno par julam bardas nahi hoga @TripleTalaq Hindu daram par lago hoga hamari Hindu baheno ki soraksa ke liye
+
+" PREVIEW OF Sarcasm_tweets_with_language.txt "
+
+866871160725794816
+Triple           en
+Talaq            hi
+par              hi
+Burbak           hi
+Kuchh            hi
+nahi             hi
+bolega           hi
+
+880356789358743553
+Batao            hi
+ye               hi
+uss              hi
+site             en
+pr               hi
+se               hi
+akki             hi
+sir              en
+ke               hi
+verdict          en
+nikaal           hi
+laaye            hi
+jaha             hi
+he               hi
+ajay             hi
+ki               hi
+ek               hi
+bi               hi
+movie            en
+hit              hi
+nai              hi
+
+877751493889105920
+Hindu            hi
+baheno           hi
+par              hi
+julam            hi
+bardas           hi
+nahi             hi
+hoga             hi
+@TripleTalaq     rest
+Hindu            hi
+daram            hi
+par              hi
+lago             hi
+hoga             hi
+hamari           hi
+Hindu            hi
+baheno           hi
+ki               hi
+soraksa          hi
+ke               hi
+liye             hi
+
+" PREVIEW OF Sarcasm_tweet_truth.txt "
+
+866871160725794816
+NO
+880356789358743553
+YES
+877751493889105920
+NO
+
+2. Now we join all the json files using the joining_json.py
+3. We treat the "label" key of json file as a ClassLabel type using the reading_json.py and also we add another key called "id_str"
+    its value is same as that of key "id" but it's a string unlike of "id"
+4. Now we push the final json file into the Hugging Face Repository using the final_json_push_tohub.py
