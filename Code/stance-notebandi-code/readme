@@ -1,0 +1,105 @@
+1. We convert the three txt file datasets into their respective json files by using the 
+      Notebandi_tweets.txt ----> tweets_txt_to_json.py ----> Notebandi_tweets.json
+      Notebandi_tweets_with_language.txt ----> tweets_with_lang_to_json.py ----> Notebandi_tweets_with_language.json
+      Notebandi_tweets_stance.txt ----> tweets_stance_to_json.py ----> Notebandi_tweets_stance.json
+
+" PREVIEW OF Notebandi_tweets.txt "
+
+796033860081426432
+Kejri & rahul : hum is nasbandi ke khilaf hain ye to hitlar shahi hai ..  Reporter: sir yeh #notebandi hui hai ..aaap nasbandi karwalo
+
+796754126671466496
+@narendramodi sir, aaj kuchh garibo mazdooro kisano ki garibi ki politics karne Wale aapke 500,1000 notebandi k khilaaf hai. Azib halat hai.
+
+796755878682599424
+#ByeByeBlackmoney. Notebandi, Ghoosbandi and Nasbandi door kar degi desh ki gandagi.
+
+" PREVIEW OF Notebandi_tweets_with_language.txt "
+
+796033860081426432
+Kejri            rest
+&                rest
+rahul            rest
+:                rest
+hum              hi
+is               hi
+nasbandi         hi
+ke               hi
+khilaf           hi
+hain             hi
+ye               hi
+to               hi
+hitlar           hi
+shahi            hi
+hai              hi
+..               rest
+Reporter         en
+:                rest
+sir              en
+yeh              hi
+#notebandi       rest
+hui              hi
+hai              hi
+..               rest
+aaap             hi
+nasbandi         hi
+karwalo          hi
+
+796754126671466496
+@narendramodi    rest
+sir              en
+,                rest
+aaj              hi
+kuchh            hi
+garibo           hi
+mazdooro         hi
+kisano           hi
+ki               hi
+garibi           hi
+ki               hi
+politics         en
+karne            hi
+Wale             hi
+aapke            hi
+500              rest
+,                rest
+1000             rest
+notebandi        hi
+k                hi
+khilaaf          hi
+hai              hi
+.                rest
+Azib             hi
+halat            hi
+hai              hi
+.                rest
+
+796755878682599424
+#ByeByeBlackmoney  rest
+.                rest
+Notebandi        hi
+,                rest
+Ghoosbandi       hi
+and              en
+Nasbandi         hi
+door             hi
+kar              hi
+degi             hi
+desh             hi
+ki               hi
+gandagi          hi
+.                rest
+
+" PREVIEW OF Notebandi_tweets_stance.txt "
+
+796033860081426432
+NONE
+796754126671466496
+NONE
+796755878682599424
+FAVOR
+
+2. Now we join all the json files using the joining_json.py
+3. We treat the "label" key of json file as a ClassLabel type using the reading_json.py and also we add another key called "id_str"
+    its value is same as that of key "id" but it's a string unlike of "id"
+4. Now we push the final json file into the Hugging Face Repository using the final_json_push_tohub.py
